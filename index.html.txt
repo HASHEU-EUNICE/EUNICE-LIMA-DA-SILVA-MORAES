@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia das Crianças 🎈</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Trebuchet MS", Arial, sans-serif;
+            background-color: #fffaf0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff6b6b, #ffb347);
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        header h1 {
+            font-size: 2.4rem;
+        }
+
+        nav {
+            background-color: #ffffff;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 3px 8px #00000012;
+        }
+
+        nav a {
+            color: #e85d75;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 12px;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            color: #7b61ff;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 65px 20px;
+            background: linear-gradient(180deg, #fff0a8, #ffefd5);
+        }
+
+        .hero .emoji {
+            font-size: 5rem;
+        }
+
+        .hero h2 {
+            color: #e85d75;
+            font-size: 2.2rem;
+            margin: 10px 0;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 0 auto 22px;
+            font-size: 1.1rem;
+        }
+
+        .botao {
+            display: inline-block;
+            background-color: #7b61ff;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .botao:hover {
+            background-color: #5a42d6;
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 45px 20px;
+            text-align: center;
+        }
+
+        section h2 {
+            color: #e85d75;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .historia {
+            background-color: white;
+        }
+
+        .cartoes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .cartao {
+            background-color: white;
+            padding: 25px;
+            border-radius: 18px;
+            width: 280px;
+            box-shadow: 0 5px 15px #00000010;
+            transition: transform 0.3s;
+        }
+
+        .cartao:hover {
+            transform: translateY(-5px);
+        }
+
+        .cartao .emoji {
+            font-size: 3rem;
+        }
+
+        .cartao h3 {
+            color: #7b61ff;
+            margin: 10px 0;
+        }
+
+        .importancia {
+            background-color: #dff7f0;
+        }
+
+        .curiosidade {
+            background-color: #ffe3ec;
+        }
+
+        .mensagem {
+            background: linear-gradient(135deg, #7b61ff, #52b8d8);
+            color: white;
+        }
+
+        .mensagem h2 {
+            color: white;
+        }
+
+        #surpresa {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 22px 15px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero h2 {
+                font-size: 1.7rem;
+            }
+
+            nav a {
+                margin: 5px 7px;
+            }
+
+            .cartao {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🎈 Dia das Crianças 🎈</h1>
+        <p>Um dia especial para celebrar a infância!</p>
+    </header>
+
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#historia">História</a>
+        <a href="#importancia">Importância</a>
+        <a href="#brincadeiras">Brincadeiras</a>
+    </nav>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="emoji">🧸🎨🎁</div>
+            <h2>12 de outubro</h2>
+            <p>
+                O Dia das Crianças é uma data para celebrar a alegria,
+                a imaginação, as brincadeiras e o amor. Toda criança
+                merece carinho, respeito, educação e a oportunidade
+                de crescer feliz!
+            </p>
+            <a href="#historia" class="botao">Vamos conhecer?</a>
+        </section>
+
+        <section class="historia" id="historia">
+            <div class="container">
+                <h2>📚 História do Dia das Crianças</h2>
+                <p>
+                    No Brasil, o Dia das Crianças é comemorado em
+                    12 de outubro. A data foi oficializada em 1924,
+                    por meio do Decreto nº 4.867. Com o passar do
+                    tempo, a comemoração ganhou popularidade e passou
+                    a ser marcada por presentes, festas e atividades
+                    especiais para os pequenos.
+                </p>
+                <p style="margin-top: 15px;">
+                    Mais do que ganhar brinquedos, esse dia nos lembra
+                    da importância de proteger as crianças e garantir
+                    seus direitos.
+                </p>
+            </div>
+        </section>
+
+        <section class="importancia" id="importancia">
+            <div class="container">
+                <h2>💖 Por que essa data é importante?</h2>
+
+                <div class="cartoes">
+                    <article class="cartao">
+                        <div class="emoji">📚</div>
+                        <h3>Educação</h3>
+                        <p>
+                            Toda criança tem direito de aprender,
+                            estudar e descobrir coisas novas.
+                        </p>
+                    </article>
+
+                    <article class="cartao">
+                        <div class="emoji">🛡️</div>
+                        <h3>Proteção</h3>
+                        <p>
+                            Crianças devem crescer com segurança,
+                            saúde, respeito e carinho.
+                        </p>
+                    </article>
+
+                    <article class="cartao">
+                        <div class="emoji">⚽</div>
+                        <h3>Brincadeiras</h3>
+                        <p>
+                            Brincar ajuda no desenvolvimento,
+                            na criatividade e na amizade.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="brincadeiras">
+            <div class="container">
+                <h2>🎨 Como comemorar?</h2>
+                <p>Existem muitas maneiras divertidas de celebrar!</p>
+
+                <div class="cartoes">
+                    <article class="cartao">
+                        <div class="emoji">🖍️</div>
+                        <h3>Desenhar e pintar</h3>
+                        <p>
+                            Solte a imaginação criando desenhos
+                            coloridos e divertidos.
+                        </p>
+                    </article>
+
+                    <article class="cartao">
+                        <div class="emoji">🏃</div>
+                        <h3>Brincar ao ar livre</h3>
+                        <p>
+                            Pular corda, jogar bola e brincar
+                            com os amigos.
+                        </p>
+                    </article>
+
+                    <article class="cartao">
+                        <div class="emoji">📖</div>
+                        <h3>Ler histórias</h3>
+                        <p>
+                            Descobrir mundos mágicos por meio
+                            dos livros e da imaginação.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="curiosidade">
+            <div class="container">
+                <h2>🌟 Você sabia?</h2>
+                <p>
+                    O dia 12 de outubro também é feriado nacional
+                    no Brasil em homenagem a Nossa Senhora Aparecida,
+                    padroeira do país.
+                </p>
+            </div>
+        </section>
+
+        <section class="mensagem">
+            <div class="container">
+                <h2>🎁 Uma surpresa especial!</h2>
+                <p>
+                    Clique no botão e receba uma mensagem
+                    cheia de alegria.
+                </p>
+
+                <br>
+
+                <button class="botao"
+                    onclick="mostrarSurpresa()">
+                    Clique aqui! ✨
+                </button>
+
+                <p id="surpresa" aria-live="polite"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>🌈 Feliz Dia das Crianças! 🌈</p>
+        <p>Que nunca faltem amor, sonhos e brincadeiras!</p>
+        <p>&copy; 2026 - Site educativo sobre o Dia das Crianças.</p>
+    </footer>
+
+    <script>
+        function mostrarSurpresa() {
+            document.getElementById("surpresa").textContent =
+                "🎉 Você é especial! Nunca deixe de sonhar, " +
+                "brincar, aprender e espalhar alegria! 💖";
+        }
+    </script>
+
+</body>
+</html>
