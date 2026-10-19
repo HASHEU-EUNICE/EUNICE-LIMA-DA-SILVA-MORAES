@@ -1,15 +1,22 @@
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mochila Virtual - 2º Técnico</title>
 
 <style>
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     background: linear-gradient(to right, #0a3d62, #3c6382);
     color: white;
     margin: 0;
+    min-height: 100vh;
 }
 
 h1 {
@@ -23,7 +30,7 @@ h1 {
 
 .area h2 {
     background: #1e5f8a;
-    padding: 10px;
+    padding: 12px;
     border-radius: 10px;
 }
 
@@ -37,35 +44,458 @@ h1 {
 .materia {
     background: #1e5f8a;
     border-radius: 15px;
-    padding: 10px;
+    padding: 12px;
+    box-shadow: 0 4px 10px #0002;
 }
 
 input {
-    width: 90%;
-    padding: 5px;
+    width: 100%;
+    padding: 10px;
     border-radius: 5px;
     border: none;
     text-align: center;
+    font-size: 15px;
 }
 
 textarea {
-    width: 95%;
+    width: 100%;
     height: 120px;
     margin-top: 10px;
     border-radius: 10px;
     border: none;
     padding: 10px;
+    font-family: Arial, sans-serif;
+    resize: vertical;
+}
+
+.botoes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 15px;
+}
+
+.botao {
+    padding: 13px 20px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.botao:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+}
+
+.botao-criancas {
+    background: #ff9800;
+}
+
+.botao-topo {
+    background: #16a085;
+}
+
+.rodape {
+    text-align: center;
+    padding: 25px;
+}
+
+/* SITE DO DIA DAS CRIANÇAS */
+
+#paginaCriancas {
+    display: none;
+    background: #fff8e7;
+    color: #333;
+    min-height: 100vh;
+}
+
+.topo-criancas {
+    background: linear-gradient(135deg, #ff6384, #ffb347);
+    color: white;
+    text-align: center;
+    padding: 35px 18px;
+}
+
+.topo-criancas h1 {
+    font-size: 34px;
+    margin: 10px 0;
+}
+
+.topo-criancas p {
+    font-size: 17px;
+}
+
+.menu-criancas {
+    background: white;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.menu-criancas a {
+    color: #d94370;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.menu-criancas a:hover {
+    text-decoration: underline;
+}
+
+.secao-criancas {
+    padding: 35px 20px;
+    text-align: center;
+}
+
+.secao-criancas h2 {
+    color: #e84f78;
+    margin-bottom: 18px;
+}
+
+.conteudo-criancas {
+    max-width: 950px;
+    margin: auto;
+}
+
+.historia-criancas {
+    background: white;
+}
+
+.direitos-criancas {
+    background: #dff7ed;
+}
+
+.brincadeiras-criancas {
+    background: #ffe2ed;
+}
+
+.cartoes-criancas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 18px;
+    margin-top: 22px;
+}
+
+.cartao-criancas {
+    background: white;
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 4px 12px #0001;
+}
+
+.emoji-criancas {
+    font-size: 45px;
+}
+
+.cartao-criancas h3 {
+    color: #7655dd;
+}
+
+.secao-criancas p {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.mensagem-criancas {
+    background: linear-gradient(135deg, #7655dd, #42b9d4);
+    color: white;
+}
+
+.mensagem-criancas h2 {
+    color: white;
+}
+
+.botao-voltar {
+    background: #263746;
+    margin-top: 15px;
+}
+
+#mensagemEspecial {
+    font-weight: bold;
+    font-size: 19px;
+    margin-top: 20px;
+}
+
+.rodape-criancas {
+    text-align: center;
+    padding: 25px;
+    background: #263746;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .topo-criancas h1 {
+        font-size: 27px;
+    }
+
+    .area {
+        margin: 12px;
+    }
+
+    .secao-criancas {
+        padding: 25px 15px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<h1>🎒 Mochila Virtual - 2º Ano Técnico</h1>
+<!-- PÁGINA PRINCIPAL: MOCHILA VIRTUAL -->
 
-<div id="app"></div>
+<div id="paginaMochila">
+
+    <h1>🎒 Mochila Virtual - 2º Ano Técnico</h1>
+
+    <div class="botoes">
+        <button class="botao botao-criancas"
+                onclick="abrirDiaCriancas()">
+            🎈 Dia das Crianças 🎁
+        </button>
+    </div>
+
+    <div id="app"></div>
+
+    <div class="rodape">
+        <p>📚 Organize seus estudos e anotações!</p>
+        <p>Suas anotações ficam salvas neste navegador.</p>
+    </div>
+
+</div>
+
+<!-- PÁGINA DO DIA DAS CRIANÇAS -->
+
+<div id="paginaCriancas">
+
+    <header class="topo-criancas">
+        <div style="font-size: 55px;">🎈 🧸 🎁</div>
+        <h1>Feliz Dia das Crianças!</h1>
+        <p>12 de outubro — Um dia de alegria, sonhos e diversão!</p>
+
+        <button class="botao botao-voltar"
+                onclick="voltarMochila()">
+            ⬅ Voltar para a Mochila Virtual
+        </button>
+    </header>
+
+    <nav class="menu-criancas">
+        <a href="#inicioCriancas">Início</a>
+        <a href="#historiaCriancas">História</a>
+        <a href="#direitosCriancas">Direitos</a>
+        <a href="#brincadeirasCriancas">Brincadeiras</a>
+        <a href="#mensagemCriancas">Mensagem</a>
+    </nav>
+
+    <main>
+
+        <section class="secao-criancas" id="inicioCriancas">
+            <div class="conteudo-criancas">
+                <h2>🌈 Ser criança é viver a magia da infância!</h2>
+
+                <p>
+                    Ser criança é descobrir o mundo com curiosidade,
+                    inventar brincadeiras, fazer amigos e sonhar com
+                    um futuro cheio de possibilidades.
+                </p>
+
+                <p>
+                    Toda criança merece carinho, respeito, educação,
+                    proteção e a oportunidade de crescer feliz!
+                </p>
+            </div>
+        </section>
+
+        <section class="secao-criancas historia-criancas"
+                 id="historiaCriancas">
+            <div class="conteudo-criancas">
+                <h2>📚 História do Dia das Crianças</h2>
+
+                <p>
+                    No Brasil, o Dia das Crianças é comemorado em
+                    12 de outubro. A data foi oficializada em 1924,
+                    pelo Decreto nº 4.867.
+                </p>
+
+                <p>
+                    Com o passar dos anos, a comemoração tornou-se
+                    popular, sendo marcada por presentes, festas
+                    e atividades especiais para as crianças.
+                </p>
+
+                <p>
+                    Porém, essa data representa muito mais do que
+                    ganhar presentes: ela também nos lembra da
+                    importância de cuidar, respeitar e proteger
+                    todas as crianças.
+                </p>
+            </div>
+        </section>
+
+        <section class="secao-criancas direitos-criancas"
+                 id="direitosCriancas">
+            <div class="conteudo-criancas">
+                <h2>💖 Direitos das crianças</h2>
+
+                <p>
+                    Todas as crianças têm direitos que devem ser
+                    respeitados e protegidos.
+                </p>
+
+                <div class="cartoes-criancas">
+
+                    <article class="cartao-criancas">
+                        <div class="emoji-criancas">📚</div>
+                        <h3>Educação</h3>
+                        <p>
+                            Direito de estudar, aprender e desenvolver
+                            seus talentos.
+                        </p>
+                    </article>
+
+                    <article class="cartao-criancas">
+                        <div class="emoji-criancas">🩺</div>
+                        <h3>Saúde</h3>
+                        <p>
+                            Direito de receber cuidados e crescer
+                            com saúde e bem-estar.
+                        </p>
+                    </article>
+
+                    <article class="cartao-criancas">
+                        <div class="emoji-criancas">🛡️</div>
+                        <h3>Proteção</h3>
+                        <p>
+                            Direito de viver com segurança,
+                            dignidade e respeito.
+                        </p>
+                    </article>
+
+                    <article class="cartao-criancas">
+                        <div class="emoji-criancas">⚽</div>
+                        <h3>Lazer</h3>
+                        <p>
+                            Direito de brincar, descansar e
+                            participar de atividades divertidas.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="secao-criancas brincadeiras-criancas"
+                 id="brincadeirasCriancas">
+            <div class="conteudo-criancas">
+                <h2>🎨 Brincadeiras para comemorar</h2>
+
+                <div class="cartoes-criancas">
+
+                    <article class="cartao-criancas">
+                        <div class="emoji-criancas">⚽</div>
+                        <h3>Jogar bola</h3>
+                        <p>
+                            Movimente o corpo e divirta-se
+                            com os amigos.
+                        </p>
+                    </article>
+
+                    <article class="cartao-criancas">
+                        <div class="emoji-criancas">🖍️</div>
+                        <h3>Desenhar e pintar</h3>
+                        <p>
+                            Use muitas cores para criar desenhos
+                            incríveis.
+                        </p>
+                    </article>
+
+                    <article class="cartao-criancas">
+                        <div class="emoji-criancas">📖</div>
+                        <h3>Ler histórias</h3>
+                        <p>
+                            Explore mundos mágicos por meio
+                            dos livros e da imaginação.
+                        </p>
+                    </article>
+
+                    <article class="cartao-criancas">
+                        <div class="emoji-criancas">🧩</div>
+                        <h3>Montar quebra-cabeças</h3>
+                        <p>
+                            Desenvolva a criatividade e descubra
+                            novas maneiras de resolver desafios.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="secao-criancas">
+            <div class="conteudo-criancas">
+                <h2>🌟 Você sabia?</h2>
+
+                <p>
+                    O dia 12 de outubro também é feriado nacional
+                    no Brasil em homenagem a Nossa Senhora Aparecida,
+                    padroeira do país.
+                </p>
+
+                <p>
+                    O Estatuto da Criança e do Adolescente (ECA),
+                    criado em 1990, é uma das principais leis brasileiras
+                    que protegem os direitos das crianças e adolescentes.
+                </p>
+            </div>
+        </section>
+
+        <section class="secao-criancas mensagem-criancas"
+                 id="mensagemCriancas">
+            <div class="conteudo-criancas">
+                <h2>🎁 Uma mensagem especial para você!</h2>
+
+                <p>
+                    Clique no botão e receba uma mensagem cheia
+                    de alegria.
+                </p>
+
+                <button class="botao"
+                        style="background:#ff9800"
+                        onclick="mostrarMensagem()">
+                    ✨ Receber mensagem
+                </button>
+
+                <p id="mensagemEspecial" aria-live="polite"></p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="rodape-criancas">
+        <p>🎉 Feliz Dia das Crianças! 🎉</p>
+        <p>Que nunca faltem amor, sonhos, respeito e brincadeiras!</p>
+
+        <button class="botao botao-voltar"
+                onclick="voltarMochila()">
+            ⬅ Voltar para a Mochila Virtual
+        </button>
+    </footer>
+
+</div>
 
 <script>
+
+/* MATÉRIAS DA MOCHILA VIRTUAL */
 
 const dados = {
     "📚 Base Comum": [
@@ -107,50 +537,92 @@ const dados = {
 };
 
 const app = document.getElementById("app");
-
 let id = 0;
 
-for (let area in dados) {
+for (const area in dados) {
 
-    let divArea = document.createElement("div");
+    const divArea = document.createElement("div");
     divArea.className = "area";
 
-    let tituloArea = document.createElement("h2");
+    const tituloArea = document.createElement("h2");
     tituloArea.textContent = area;
 
-    let container = document.createElement("div");
+    const container = document.createElement("div");
     container.className = "container";
 
-    dados[area].forEach(materia => {
+    dados[area].forEach(function(materia) {
 
-        let box = document.createElement("div");
+        const materiaId = id++;
+
+        const box = document.createElement("div");
         box.className = "materia";
 
-        let input = document.createElement("input");
-        input.value = localStorage.getItem("titulo"+id) || materia;
+        const input = document.createElement("input");
+        input.value = localStorage.getItem("titulo" + materiaId) ?? materia;
+        input.setAttribute("aria-label", "Nome da matéria");
 
-        input.oninput = () => {
-            localStorage.setItem("titulo"+id, input.value);
-        };
+        input.addEventListener("input", function() {
+            localStorage.setItem("titulo" + materiaId, input.value);
+        });
 
-        let textarea = document.createElement("textarea");
+        const textarea = document.createElement("textarea");
         textarea.placeholder = "Escreva suas anotações...";
-        textarea.value = localStorage.getItem("texto"+id) || "";
+        textarea.value = localStorage.getItem("texto" + materiaId) ?? "";
+        textarea.setAttribute("aria-label", "Anotações da matéria");
 
-        textarea.oninput = () => {
-            localStorage.setItem("texto"+id, textarea.value);
-        };
+        textarea.addEventListener("input", function() {
+            localStorage.setItem("texto" + materiaId, textarea.value);
+        });
 
         box.appendChild(input);
         box.appendChild(textarea);
         container.appendChild(box);
-
-        id++;
     });
 
     divArea.appendChild(tituloArea);
     divArea.appendChild(container);
     app.appendChild(divArea);
+}
+
+/* ABRIR O SITE DO DIA DAS CRIANÇAS */
+
+function abrirDiaCriancas() {
+    document.getElementById("paginaMochila").style.display = "none";
+    document.getElementById("paginaCriancas").style.display = "block";
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+/* VOLTAR PARA A MOCHILA */
+
+function voltarMochila() {
+    document.getElementById("paginaCriancas").style.display = "none";
+    document.getElementById("paginaMochila").style.display = "block";
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+/* MENSAGENS DO DIA DAS CRIANÇAS */
+
+function mostrarMensagem() {
+    const mensagens = [
+        "🌈 Nunca deixe de sonhar e acreditar em você! 💖",
+        "🎈 Sua alegria deixa o mundo mais bonito! 😊",
+        "⭐ Você é especial e tem um futuro cheio de possibilidades!",
+        "🧸 Que nunca faltem carinho, amizade e diversão!",
+        "🎨 Continue aprendendo, brincando e usando sua criatividade!"
+    ];
+
+    const indice = Math.floor(Math.random() * mensagens.length);
+
+    document.getElementById("mensagemEspecial").textContent =
+        mensagens[indice];
 }
 
 </script>
